@@ -10,10 +10,10 @@ interface AnalyticsCardProps {
 
 export function AnalyticsCard({ title, icon, children }: AnalyticsCardProps) {
   return (
-    <Card>
+    <Card className="border-none shadow-md hover:shadow-lg transition-shadow duration-200">
       <CardHeader className="pb-2">
         <CardTitle className="text-md flex items-center gap-2">
-          {icon && <span className="text-brouwer-primary">{icon}</span>}
+          {icon && <span className="text-primary">{icon}</span>}
           {title}
         </CardTitle>
       </CardHeader>

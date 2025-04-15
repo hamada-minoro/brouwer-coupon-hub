@@ -1,7 +1,7 @@
 
 import { ReactNode, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Home, BarChart2, Cog, QrCode } from "lucide-react";
+import { Menu, QrCode, BarChart2, Cog } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -22,7 +22,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
-      {/* Sidebar */}
+      {/* Sidebar with updated styling */}
       <div
         className={cn(
           "bg-white border-r border-gray-200 flex flex-col transition-all duration-300",
@@ -34,12 +34,12 @@ const MainLayout = ({ children }: MainLayoutProps) => {
             <>
               <div className="flex items-center gap-2">
                 <img src="/brouwer-logo.svg" alt="Brouwer Logo" className="h-8" />
-                <span className="font-bold text-xl">Brouwer</span>
               </div>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setSidebarOpen(false)}
+                className="text-gray-700"
               >
                 <Menu className="h-5 w-5" />
               </Button>
@@ -50,6 +50,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                 variant="ghost"
                 size="icon"
                 onClick={() => setSidebarOpen(true)}
+                className="text-gray-700"
               >
                 <Menu className="h-5 w-5" />
               </Button>
@@ -66,8 +67,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                 className={cn(
                   "flex items-center px-3 py-3 rounded-md text-sm font-medium transition-colors",
                   location.pathname === item.path 
-                    ? "bg-brouwer-primary text-white" 
-                    : "text-gray-700 hover:bg-brouwer-light hover:text-brouwer-dark",
+                    ? "bg-primary text-white" 
+                    : "text-gray-700 hover:bg-gray-100",
                   !sidebarOpen && "justify-center px-0"
                 )}
               >
@@ -79,17 +80,17 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         </div>
         <div className="p-4">
           <div className={cn(
-            "p-3 bg-brouwer-light bg-opacity-40 rounded-lg",
+            "p-3 bg-gray-50 rounded-lg",
             !sidebarOpen && "p-2"
           )}>
             {sidebarOpen ? (
-              <div className="text-xs text-brouwer-dark">
+              <div className="text-xs text-gray-600">
                 <p className="font-medium">Brouwer Coupon Hub</p>
                 <p>Versão 1.0.0</p>
               </div>
             ) : (
               <div className="flex justify-center">
-                <Home className="h-5 w-5 text-brouwer-dark" />
+                <QrCode className="h-5 w-5 text-gray-600" />
               </div>
             )}
           </div>
