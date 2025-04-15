@@ -52,6 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				brouwer: {
+          primary: '#9b87f5',
+          secondary: '#7E69AB',
+          dark: '#1A1F2C',
+          light: '#D6BCFA', 
+          neutral: '#8E9196',
+          red: '#ea384c'
+        },
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
